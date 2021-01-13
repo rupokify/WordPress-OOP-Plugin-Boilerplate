@@ -53,6 +53,6 @@ if ( !class_exists('SamplePlugin') ) {
     
     }
 
-    new SamplePlugin();
-
 }
+
+new SamplePlugin();

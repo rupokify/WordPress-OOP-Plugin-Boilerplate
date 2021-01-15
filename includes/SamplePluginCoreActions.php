@@ -19,7 +19,7 @@ if ( !class_exists('SamplePluginCoreActions') ) {
          * Your core action output
          */
         protected function helloWorld() {
-            echo "Hello World!";
+            // SamplePlugin Core Actions
         }
 
     }

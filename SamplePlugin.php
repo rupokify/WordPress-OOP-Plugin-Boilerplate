@@ -34,25 +34,29 @@ if ( !class_exists('SamplePlugin') ) {
          * SamplePlugin constructor.
          */
         public function __construct() {
+	        spl_autoload_register( array($this, 'autoload') );
             add_action( 'plugins_loaded', array( $this, 'init' ) );
         }
+
+	    /**
+	     * @param $class
+	     * Autoload SamplePlugin Classes
+	     */
+	    public function autoload($class) {
+		    if ( is_file( plugin_dir_path( __FILE__ ) . 'includes/' . $class . '.php' ) ) {
+			    include_once plugin_dir_path( __FILE__ ) . 'includes/' . $class . '.php';
+		    }
+	    }
 
         /**
          * Initialize plugin
          */
         public function init() {
-            include_once 'includes/SamplePluginAdminMenu.php';
-            include_once 'includes/SamplePluginAdminAssets.php';
-            include_once 'includes/SamplePluginSetupActions.php';
-            include_once 'includes/SamplePluginCoreActions.php';
-
-            new SamplePluginAdminMenu();
+        	new SamplePluginAdminMenu();
             new SamplePluginAdminAssets();
             new SamplePluginSetupActions();
         }
-    
     }
-
 }
 
 new SamplePlugin();

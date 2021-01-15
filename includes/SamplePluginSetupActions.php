@@ -18,8 +18,8 @@ if ( !class_exists('SamplePluginSetupActions')) {
          * Register activation/deactivation hook
          */
         protected function setupActions() {
-            register_activation_hook( SAMPLE_PLUGIN_FILE, array('SamplePlugin', 'activate' ) );
-            register_deactivation_hook( SAMPLE_PLUGIN_FILE, array('SamplePlugin', 'deactivate' ) );
+            register_activation_hook( SAMPLE_PLUGIN_FILE, array('SamplePluginSetupActions', 'activate' ) );
+            register_deactivation_hook( SAMPLE_PLUGIN_FILE, array('SamplePluginSetupActions', 'deactivate' ) );
         }
 
         /**

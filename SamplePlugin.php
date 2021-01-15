@@ -54,9 +54,9 @@ if ( !class_exists('SamplePlugin') ) {
         public function init() {
         	new SamplePluginAdminMenu();
             new SamplePluginAdminAssets();
-            new SamplePluginSetupActions();
         }
     }
 }
 
 new SamplePlugin();
+new SamplePluginSetupActions();
